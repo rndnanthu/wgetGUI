@@ -8,11 +8,15 @@ A PyQt5 GUI front-end for wget specialized for downloading open directory listin
 ## Features
 
 - **GUI Interface**: Easy-to-use graphical interface for configuring wget options
+- **Multiple URL Sources**: Add and manage multiple directory sources in a list
+- **Search Functionality**: Search across all URL sources for specific files or patterns
+- **Interactive File Selection**: Browse search results with checkboxes to select individual files or use "Select All"
+- **Multi-file Downloads**: Generate wget commands for multiple selected files
 - **Progress Tracking**: Real-time progress monitoring with percentage, speed, and ETA
 - **Recursive Downloads**: Support for recursive directory downloads with depth control
 - **File Type Filtering**: Accept or reject specific file types using wildcards
 - **Resume Support**: Continue interrupted downloads
-- **Preset Management**: Save and load download configurations
+- **Preset Management**: Save and load download configurations (including URL lists)
 - **Command Preview**: See the generated wget command before execution
 - **Directory Control**: Options to customize directory structure and naming
 
@@ -54,7 +58,10 @@ A PyQt5 GUI front-end for wget specialized for downloading open directory listin
    ```
 
 2. Configure download options:
-   - Enter the URL of the directory to download
+   - Add one or more URL sources to the list
+   - Use the search box to find specific files across all sources
+   - Select files from the search results dialog
+   - Or use traditional recursive download from a single source
    - Select destination folder
    - Configure wget options as needed
 
@@ -64,7 +71,8 @@ A PyQt5 GUI front-end for wget specialized for downloading open directory listin
 
 ## Configuration Options
 
-- **URL**: The directory root URL to download from
+- **URL Sources**: List of directory URLs to download from or search through
+- **Search**: Search all URL sources for files matching a text pattern
 - **Destination folder**: Local path where files will be saved
 - **Recursive**: Enable recursive downloading of subdirectories
 - **No parent**: Don't ascend to parent directories (recommended)
@@ -85,6 +93,9 @@ A PyQt5 GUI front-end for wget specialized for downloading open directory listin
 
 ## Tips
 
+- **Multiple Sources**: Add multiple URL sources and use the search feature to find specific files across all of them
+- **Search Patterns**: Enter any text to search for in filenames (e.g., ".iso", "ubuntu", "2024")
+- **Selective Downloads**: Use search results dialog to select exactly which files you want to download
 - For open directory downloads, use `-r -np -nH --cut-dirs` to avoid creating deep host directories
 - Use `--accept` to restrict file types and avoid downloading unwanted files
 - Use `-c` to resume interrupted downloads
